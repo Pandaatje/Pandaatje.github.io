@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <meta name="description" content="Landscape Photography, Selwyn Hoeks, Hasselblad 500CM, Zenza Bronica ETRS">
+  <meta name="description" content="Landscape Photography,Travel, Pandaatje, Dark, Moody, Sony A7">
   
   <link rel="icon" href="assets/logo/icon2.svg">
   
@@ -22,6 +22,7 @@
   
 </head>
 <body style="background-color: black;">
+
 
 <style>
     @keyframes fadeInAnimationCover {
@@ -76,7 +77,7 @@
                         <a href="#scrolltothis"><img src="assets/logo/SonyA7.svg" class="mbr-navbar__brand-img mbr-brand__img" alt="Mobirise" style="max-height: 234px"></a>
                         <div class=" col-sm-8 col-sm-offset-2">
                             <div class="mbr-hero animated fadeInUp">
-                                <h1 style="font-size: 18px; font-family: 'IBM Plex Mono', monospace;">Pandaatje</h1>
+                                <h1 style="font-size: 21px; font-family: 'comprehension-dark'"></h1>
                             </div>
                         </div>
                     </div>
@@ -212,6 +213,12 @@
         {'file' : "181_51289409429_o.jpg", 'description' : "181 - Cold Awakening - Kennemerduinen, The Netherlands" , 'format' : "L"},
         {'file' : "151_51373030780_o.jpg", 'description' : "151 - Morning Bloom - Sallandse Heuvelrug, The Netherland" , 'format' : "L"},
         {'file' : "150_51372256388_o.jpg", 'description' : "150 - Morning Bloom - Sallandse Heuvelrug, The Netherlands" , 'format' : "P"},
+        
+        {'file' : "DSC01205-1.jpg", 'description' : "" , 'format' : "L"},
+        {'file' : "DSC01221-1.jpg", 'description' : "" , 'format' : "L"},
+        {'file' : "DSC01241-1.jpg", 'description' : "" , 'format' : "P"},
+        {'file' : "DSC01247-1.jpg", 'description' : "" , 'format' : "L"},
+        
         {'file' : "031_51249751563_o.jpg", 'description' : "031 - Crashing Waves - Kennemerduinen, The Netherlands" , 'format' : "L"},
         {'file' : "030_51250313184_o.jpg", 'description' : "030 - Sea, Sand and Sunset - Ameland, The Netherlands" , 'format' : "L"},
 
@@ -262,7 +269,7 @@
         {'file' : "11_Dag_20_DSC03559-Pano_selwyn_selwyn-1.jpg", 'description' : "" , 'format' : "L"},
         {'file' : "3_Dag_13_DSC02088_selwyn_selwyn-1.jpg", 'description' : "" , 'format' : "P"},
         {'file' : "3_Dag_13_DSC02092_coline_coline-1.jpg", 'description' : "" , 'format' : "L"},
-        {'file' : "_owl3371-1_51396293604_o.jpg", 'description' : "" , 'format' : "L"},
+        {'file' : "owl3371-1_51396293604_o.jpg", 'description' : "" , 'format' : "L"},
         {'file' : "10_Dag_22_DSC04162_selwyn_selwyn-1.jpg", 'description' : "" , 'format' : "P"},
         {'file' : "10_Dag_22_DSC04184_coline_coline-1.jpg", 'description' : "" , 'format' : "L"},
         {'file' : "10_Dag_11_DSC01783_selwyn_selwyn-1.jpg", 'description' : "" , 'format' : "L"},
@@ -298,10 +305,7 @@
         {'file' : "130_51337762599_o.jpg", 'description' : "130 - Misty Mountains - Antrona Valley, Italy" , 'format' : "P"},
         {'file' : "8_Dag_19_DSC03436_selwyn_selwyn-1.jpg", 'description' : "" , 'format' : "L"},
 
-        {'file' : "DSC01205-1.jpg", 'description' : "" , 'format' : "L"},
-        {'file' : "DSC01221-1.jpg", 'description' : "" , 'format' : "L"},
-        {'file' : "DSC01241-1.jpg", 'description' : "" , 'format' : "P"},
-        {'file' : "DSC01247-1.jpg", 'description' : "" , 'format' : "L"},
+
 
 
 
@@ -384,20 +388,33 @@
         console.log("item" + activeItem);
     }
 
+    //const coverIDoverlay1 = document.getElementById('coverIDoverlay_white');
+    // var WindowHeight = window.innerHeight - 100;
+    // var currentYpos = window.pageYOffset;
+    // var opacityWhite = 0;
+
+    // var t = setInterval(runFunction,100);
+    // function runFunction(){
+    //     if(currentYpos != window.pageYOffset){
+    //         currentYpos = window.pageYOffset;
+    //         opacityWhite = window.pageYOffset / WindowHeight;
+    //         if(opacityWhite<1.1) coverIDoverlay1.style.opacity = opacityWhite;
+    //     }
+    // }
+
     const coverIDoverlay1 = document.getElementById('coverIDoverlay_white');
-    var WindowHeight = window.innerHeight - 100;
-    var currentYpos = window.pageYOffset;
-    var opacityWhite = 0;
+    var TriggerScroll = true;
+    var galTop = document.querySelector("#scrolltothis").offsetTop
 
-    var t = setInterval(runFunction,100);
-    function runFunction(){
-        if(currentYpos != window.pageYOffset){
-            currentYpos = window.pageYOffset;
-            opacityWhite = window.pageYOffset / WindowHeight;
-            if(opacityWhite<1.1) coverIDoverlay1.style.opacity = opacityWhite;
+    document.addEventListener('scroll', function(e) {
+        if(TriggerScroll) {
+            document.querySelector("#coverID > div > div.mbr-arrow.mbr-arrow--floating.text-center > div > a").click();
+            TriggerScroll = false;
         }
-    }
-
+        if(window.scrollY==0) {
+            TriggerScroll = true;
+        }
+    });
 
     
 </script>

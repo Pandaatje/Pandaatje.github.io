@@ -47,7 +47,7 @@
 }
 
 #coverIDoverlay {
-    animation: fadeInAnimationCover ease 4s;
+    animation: fadeInAnimationCover ease 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -61,12 +61,20 @@
     font-style: italic;
 }
 
+@media (min-width: 50.000px) {  #coverID {background-image: url(assets/images/cover_1000px.jpg); }  }
+@media (min-width: 550.00px) {  #coverID {background-image: url(assets/images/cover_1000px.jpg); }  }
+@media (min-width: 750.00px) {  #coverID {background-image: url(assets/images/cover_1000px.jpg); }  }
+@media (min-width: 990.00px) {  #coverID {background-image: url(assets/images/cover_1300px.jpg); }  }
+@media (min-width: 1200.00px) { #coverID {background-image: url(assets/images/cover_1600px.jpg); }  }
+@media (min-width: 1400.00px) { #coverID {background-image: url(assets/images/cover_1600px.jpg); }  }
+@media (min-width: 5000.00px) { #coverID {background-image: url(assets/images/cover_full.jpg); }  }
+
 </style>
 
 
 
 
-<section id="coverID" class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="header4-164" data-rv-view="2" style="background-color: black; background-image: url(assets/images/cover.jpg); opacity: 0;">
+<section id="coverID" class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="header4-164" data-rv-view="2" style="background-color: black; opacity: 0;">
     <div class="mbr-box__magnet mbr-box__magnet--sm-padding mbr-box__magnet--center-center mbr-after-navbar">
         <div class="mbr-overlay" id="coverIDoverlay" style="opacity: 0.5; background-color: black;"></div>
         <div class="mbr-overlay" id="coverIDoverlay_white" style="opacity: 0; background-color:  #f8f8f8; transition-duration: 1s;"></div>
@@ -376,7 +384,6 @@
         activeItem++;
         if(activeItem>(total_img-1)) activeItem = 1;
         document.getElementById("item" + activeItem).firstChild.src = 'flickr/1500px/'  + data[activeItem].file
-       
         console.log("item" + activeItem);
     }
 
@@ -384,7 +391,6 @@
         activeItem--;
         if(activeItem<1) activeItem = total_img-1;
         document.getElementById("item" + activeItem).firstChild.src = 'flickr/1500px/'  + data[activeItem].file
-       
         console.log("item" + activeItem);
     }
 
@@ -402,6 +408,15 @@
     //     }
     // }
 
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function returnOpage(obj) {
+        await sleep(2000);
+        obj.style.opacity = 0.0;
+    }
+
     const coverIDoverlay1 = document.getElementById('coverIDoverlay_white');
     var TriggerScroll = true;
     var galTop = document.querySelector("#scrolltothis").offsetTop
@@ -410,9 +425,12 @@
         if(TriggerScroll) {
             document.querySelector("#coverID > div > div.mbr-arrow.mbr-arrow--floating.text-center > div > a").click();
             TriggerScroll = false;
+            coverIDoverlay1.style.opacity = 1.0;
+            returnOpage(coverIDoverlay1);
         }
         if(window.scrollY==0) {
             TriggerScroll = true;
+            coverIDoverlay1.style.opacity = 0.0;
         }
     });
 

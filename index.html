@@ -47,7 +47,7 @@
 }
 
 #coverIDoverlay {
-    animation: fadeInAnimationCover ease 2s;
+    animation: fadeInAnimationCover ease 5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -61,6 +61,7 @@
     font-style: italic;
 }
 
+/* 
 @media (min-width: 50.000px) {  #coverID {background-image: url(assets/images/cover_1000px.jpg); }  }
 @media (min-width: 550.00px) {  #coverID {background-image: url(assets/images/cover_1000px.jpg); }  }
 @media (min-width: 750.00px) {  #coverID {background-image: url(assets/images/cover_1000px.jpg); }  }
@@ -68,13 +69,14 @@
 @media (min-width: 1200.00px) { #coverID {background-image: url(assets/images/cover_1600px.jpg); }  }
 @media (min-width: 1400.00px) { #coverID {background-image: url(assets/images/cover_1600px.jpg); }  }
 @media (min-width: 5000.00px) { #coverID {background-image: url(assets/images/cover_full.jpg); }  }
+ */
 
 </style>
 
 
 
 
-<section id="coverID" class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="header4-164" data-rv-view="2" style="background-color: black; opacity: 0;">
+<section id="coverID" class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="header4-164" data-rv-view="2" style="background-image: url(assets/images/cover_1600px.jpg); background-color: black; opacity: 0;">
     <div class="mbr-box__magnet mbr-box__magnet--sm-padding mbr-box__magnet--center-center mbr-after-navbar">
         <div class="mbr-overlay" id="coverIDoverlay" style="opacity: 0.5; background-color: black;"></div>
         <div class="mbr-overlay" id="coverIDoverlay_white" style="opacity: 0; background-color:  #f8f8f8; transition-duration: 1s;"></div>
@@ -82,7 +84,7 @@
             <div class="mbr-box mbr-box--stretched"><div class="mbr-box__magnet mbr-box__magnet--center-center">
                 <div class="row"><div class=" col-sm-8 col-sm-offset-2">
                     <div class="mbr-hero animated fadeInUp">
-                        <a href="#scrolltothis"><img src="assets/logo/SonyA7.svg" class="mbr-navbar__brand-img mbr-brand__img" alt="Mobirise" style="max-height: 234px"></a>
+                        <a href="#scrolltothis"><img src="assets/logo/SonyA7.svg" class="mbr-navbar__brand-img mbr-brand__img" alt="Mobirise" style="max-height: 234px; animation: fadeInAnimation ease 2s;animation-iteration-count: 1;animation-fill-mode: forwards;"></a>
                         <div class=" col-sm-8 col-sm-offset-2">
                             <div class="mbr-hero animated fadeInUp">
                                 <h1 style="font-size: 21px; font-family: 'comprehension-dark'"></h1>
@@ -336,29 +338,29 @@
     
 
     
-    // add aditional images to img_container
+    // add placeholder images to img_container
     var img_container = document.getElementById("img_container");
     for( i = 1; i < total_img; i++){
         var divAppend = document.createElement("div");
         divAppend.className = "col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item";
         divAppend.style.background = "none"
-        divAppend.innerHTML = '<a onclick="activeImg('+ i +')" href="#lb-gallery1-r" data-slide-to="24" data-toggle="modal"><img src="flickr/400px/'+ data[i].file + '" alt="" title="" loading="lazy"><span class="icon glyphicon glyphicon-zoom-in"></span></a>'
+        if(data[i].format == "L") divAppend.innerHTML = '<a onclick="activeImg('+ i +')" href="#lb-gallery1-r" data-slide-to="24" data-toggle="modal"><img src="flickr/placeholder/L.jpg" alt="" title="" loading="lazy"><span class="icon glyphicon glyphicon-zoom-in"></span></a>'
+        if(data[i].format == "P") divAppend.innerHTML = '<a onclick="activeImg('+ i +')" href="#lb-gallery1-r" data-slide-to="24" data-toggle="modal"><img src="flickr/placeholder/P.jpg" alt="" title="" loading="lazy"><span class="icon glyphicon glyphicon-zoom-in"></span></a>'
         img_container.appendChild(divAppend);
     }
-    
-    
-    // add aditional images to carousel inner
-    var carousel_inner = document.getElementById("carousel_id");
-    for( i = 1; i < total_img; i++){
-        var divAppend = document.createElement("div");
-        divAppend.className = "item";
-        divAppend.setAttribute("id", "item" + i);
-        divAppend.style.background = "none"
-        if(data[i].format == "L") divAppend.innerHTML = '<img style="background: none;" src="flickr/400px/'+ data[i].file + '" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
-        if(data[i].format == "P") divAppend.innerHTML = '<img style="background: none; width:60%; margin-left: 20%;" src="flickr/400px/'+ data[i].file + '" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
-        carousel_inner.appendChild(divAppend);
-    }
 
+    //!!!!!!!!!!!!!--- THIS IS DONE LATER TO IMPROVE LOADING TIMES
+    // add 400px size images to img_container
+    // var img_container = document.getElementById("img_container");
+    // for( i = 1; i < total_img; i++){
+    //     var divAppend = document.createElement("div");
+    //     divAppend.className = "col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item";
+    //     divAppend.style.background = "none"
+    //     divAppend.innerHTML = '<a onclick="activeImg('+ i +')" href="#lb-gallery1-r" data-slide-to="24" data-toggle="modal"><img src="flickr/400px/'+ data[i].file + '" alt="" title="" loading="lazy"><span class="icon glyphicon glyphicon-zoom-in"></span></a>'
+    //     img_container.appendChild(divAppend);
+    // }
+    //!!!!!!!!!!!!!--- THIS IS DONE LATER TO IMPROVE LOADING TIMES
+    
     
     var CarouselLoaded = 0;
     var activeItem = 0;
@@ -394,20 +396,6 @@
         console.log("item" + activeItem);
     }
 
-    //const coverIDoverlay1 = document.getElementById('coverIDoverlay_white');
-    // var WindowHeight = window.innerHeight - 100;
-    // var currentYpos = window.pageYOffset;
-    // var opacityWhite = 0;
-
-    // var t = setInterval(runFunction,100);
-    // function runFunction(){
-    //     if(currentYpos != window.pageYOffset){
-    //         currentYpos = window.pageYOffset;
-    //         opacityWhite = window.pageYOffset / WindowHeight;
-    //         if(opacityWhite<1.1) coverIDoverlay1.style.opacity = opacityWhite;
-    //     }
-    // }
-
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -416,6 +404,32 @@
         await sleep(2000);
         obj.style.opacity = 0.0;
     }
+
+
+    async function loadActualImages() {
+        
+        // add 400px size images to img_container
+        var img_container = document.getElementById("img_container");
+        for( i = 1; i < total_img; i++){
+            document.querySelector("#img_container > div:nth-child(" + i + ") > a > img").src = "flickr/400px/"+ data[i].file;
+        }
+
+        // add aditional images to carousel inner
+        var carousel_inner = document.getElementById("carousel_id");
+        for( i = 1; i < total_img; i++){
+            var divAppend = document.createElement("div");
+            divAppend.className = "item";
+            divAppend.setAttribute("id", "item" + i);
+            divAppend.style.background = "none"
+            //if(data[i].format == "L") divAppend.innerHTML = '<img style="background: none;" src="flickr/400px/'+ data[i].file + '" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
+            //if(data[i].format == "P") divAppend.innerHTML = '<img style="background: none; width:60%; margin-left: 20%;" src="flickr/400px/'+ data[i].file + '" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
+            if(data[i].format == "L")   divAppend.innerHTML = '<img style="background: none;" src="flickr/placeholder/L.jpg" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
+            if(data[i].format == "P")   divAppend.innerHTML = '<img style="background: none; width:60%; margin-left: 20%;" src="flickr/placeholder/P.jpg" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
+            carousel_inner.appendChild(divAppend);
+        }
+
+    }
+
 
     const coverIDoverlay1 = document.getElementById('coverIDoverlay_white');
     var TriggerScroll = true;
@@ -427,6 +441,7 @@
             TriggerScroll = false;
             coverIDoverlay1.style.opacity = 1.0;
             returnOpage(coverIDoverlay1);
+            loadActualImages();
         }
         if(window.scrollY==0) {
             TriggerScroll = true;

@@ -408,24 +408,34 @@
 
     async function loadActualImages() {
         
-        // add 400px size images to img_container
-        var img_container = document.getElementById("img_container");
-        for( i = 1; i < total_img; i++){
-            document.querySelector("#img_container > div:nth-child(" + i + ") > a > img").src = "flickr/400px/"+ data[i].file;
+        if(!ContainerImagesLoaded) {
+
+            // add 400px size images to img_container
+            var img_container = document.getElementById("img_container");
+            for( i = 1; i < total_img; i++){
+                document.querySelector("#img_container > div:nth-child(" + i + ") > a > img").src = "flickr/400px/"+ data[i].file;
+            }
+
+            ContainerImagesLoaded = true;
+
         }
 
-        // add aditional images to carousel inner
-        var carousel_inner = document.getElementById("carousel_id");
-        for( i = 1; i < total_img; i++){
-            var divAppend = document.createElement("div");
-            divAppend.className = "item";
-            divAppend.setAttribute("id", "item" + i);
-            divAppend.style.background = "none"
-            //if(data[i].format == "L") divAppend.innerHTML = '<img style="background: none;" src="flickr/400px/'+ data[i].file + '" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
-            //if(data[i].format == "P") divAppend.innerHTML = '<img style="background: none; width:60%; margin-left: 20%;" src="flickr/400px/'+ data[i].file + '" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
-            if(data[i].format == "L")   divAppend.innerHTML = '<img style="background: none;" src="flickr/placeholder/L.jpg" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
-            if(data[i].format == "P")   divAppend.innerHTML = '<img style="background: none; width:60%; margin-left: 20%;" src="flickr/placeholder/P.jpg" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
-            carousel_inner.appendChild(divAppend);
+        if(!CarouselImagesLoaded){
+            // add aditional images to carousel inner
+            var carousel_inner = document.getElementById("carousel_id");
+            for( i = 1; i < total_img; i++){
+                var divAppend = document.createElement("div");
+                divAppend.className = "item";
+                divAppend.setAttribute("id", "item" + i);
+                divAppend.style.background = "none"
+                //if(data[i].format == "L") divAppend.innerHTML = '<img style="background: none;" src="flickr/400px/'+ data[i].file + '" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
+                //if(data[i].format == "P") divAppend.innerHTML = '<img style="background: none; width:60%; margin-left: 20%;" src="flickr/400px/'+ data[i].file + '" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
+                if(data[i].format == "L")   divAppend.innerHTML = '<img style="background: none;" src="flickr/placeholder/L.jpg" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
+                if(data[i].format == "P")   divAppend.innerHTML = '<img style="background: none; width:60%; margin-left: 20%;" src="flickr/placeholder/P.jpg" alt="" title="" loading="lazy" style="animation: fadeInAnimation ease 3s; animation-iteration-count: 1; animation-fill-mode: forwards;"> <p id="img_description" style="opacity: 1;">' + data[i].description + '</p>'
+                carousel_inner.appendChild(divAppend);
+            }
+
+            CarouselImagesLoaded = true;
         }
 
     }
@@ -434,6 +444,8 @@
     const coverIDoverlay1 = document.getElementById('coverIDoverlay_white');
     var TriggerScroll = true;
     var galTop = document.querySelector("#scrolltothis").offsetTop
+    var ContainerImagesLoaded = false;
+    var CarouselImagesLoaded = false;
 
     document.addEventListener('scroll', function(e) {
         if(TriggerScroll) {

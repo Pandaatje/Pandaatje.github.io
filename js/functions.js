@@ -9,10 +9,16 @@ function shuffleArray(array) {
 }
 
 
-function addImages(obj,data,n) {
+function addImages(obj,data,n,webp) {
 
     // create emtpy div element
     var img_divs = '';
+    var extention = '.jpg';
+    var dir = 'medium/';
+    if(webp) {
+        extention = '.webp';
+        dir = 'medium_webp/';
+    }
 
     // loop over data 
     for( i = 0; i < n; i++){
@@ -21,7 +27,7 @@ function addImages(obj,data,n) {
         if(data[i].format=="P"){ // is portrait
 
             img_divs +=	'<div class="grid-item item animate-box" data-animate-effect="fadeIn">' +
-                            '<a href="images/medium/' + data[i].file + '.jpg" class="image-popup" title="' + data[i].description + '">' +
+                            '<a href="images/' + dir + data[i].file + extention + '" class="image-popup" title="' + data[i].description + '">' +
                                 '<div class="img-wrap"><img src="images/placeholder/P.jpg" alt="" class="img-responsive" ></div>' +
                                 '<div class="text-wrap"><div class="text-inner popup"><div><h2>' + data[i].description.split("-")[1] + '</h2></div></div></div>' +
                             '</a>' +
@@ -30,7 +36,7 @@ function addImages(obj,data,n) {
         }else{ // is landscape
 
             img_divs +=	'<div class="grid-item item animate-box" data-animate-effect="fadeIn">' +
-                            '<a href="images/medium/' + data[i].file + '.jpg" class="image-popup" title="' + data[i].description + '">' +
+                            '<a href="images/' + dir + data[i].file + extention + '" class="image-popup" title="' + data[i].description + '">' +
                                 '<div class="img-wrap"><img src="images/placeholder/L.jpg" alt="" class="img-responsive" ></div>' +
                                 '<div class="text-wrap"><div class="text-inner popup"><div><h2>' + data[i].description.split("-")[1] + '</h2></div></div></div>' +
                             '</a>' +

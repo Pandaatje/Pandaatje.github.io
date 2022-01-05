@@ -301,7 +301,7 @@
 
 		async function LoadIMGS_batch(img_data,img_start,img_stop,img_ext,img_folder,sec) {
 			await sleep(sec*1000);
-			console.log("loading images (new batch)... index start: " + img_start + ', index stop: ' + img_stop);
+			console.log("loading images... index start: " + img_start + ', index stop: ' + img_stop);
 			var filename = "";
 
 			// load thumbnails
@@ -311,11 +311,13 @@
 			}
 		}
 
-
+		// set cover image and load first 10 images
 		if(canUseWebP()){ // browser supporta webp
-			$("#landingHeader").css("background-image", "url('images/covers/cover1_overlay.webp')")
+			$("#landingHeader").css("background-image", "url('images/covers/cover1_overlay.webp')");
+			LoadIMGS_batch(data,0,10,".webp","images/small_webp/",0.5);
 		}else{
-			$("#landingHeader").css("background-image", "url('images/covers/cover1_overlay.jpg')")
+			$("#landingHeader").css("background-image", "url('images/covers/cover1_overlay.jpg')");
+			LoadIMGS_batch(data,0,10,".jpg","images/small/",0.5);
 		}
 		
 
@@ -365,7 +367,7 @@
 					var n_load_batches = 3;
 					var time_between_batches = 2; //secs
 					var n_imgs_per_batch = Math.round(data.length/n_load_batches);
-					let stops = [0]; 
+					let stops = [10]; 
 					for( i = 1; i < (n_load_batches+1); i++) stops.push(n_imgs_per_batch*i)
 					stops[stops.length-1] = data.length
 

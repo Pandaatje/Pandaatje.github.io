@@ -1,6 +1,27 @@
 /* =======================================================
 * Main CSS, edit here
 * ======================================================= */
+@font-face {font-family: PandaatjeSign; src: url("../fonts/bentila-signate-signature-font/Bentila\ Signate.otf") format("opentype");}
+
+#PandaatjeSignature{
+  line-height: 81px;
+  text-align: center;
+  font-family: "PandaatjeSign", Arial, sans-serif; 
+  font-size: 80px;
+  font-weight: 500; 
+  /* -webkit-text-stroke: 1px white; */
+  margin: 5px 0 5px 0;
+  color:white;
+ 
+}
+#PandaatjeSignatureDiv{transform: rotate(-5deg);}
+
+@media screen and (max-width: 400px) {
+  #PandaatjeSignature{
+    font-size: 55px;
+  }
+}
+
 html, body {
   overflow-x: hidden;
 }

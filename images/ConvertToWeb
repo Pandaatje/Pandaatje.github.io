@@ -1,5 +1,6 @@
 #!/bin/bash
 clear
+cd /Volumes/PhotoSSD/WEBSITE_Pandaatje/Website/images/
 echo "Converting the following images:"
 ls *.jpg
 

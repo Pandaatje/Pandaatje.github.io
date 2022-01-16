@@ -4,6 +4,8 @@ cd /Volumes/PhotoSSD/WEBSITE_Pandaatje/Website/images/
 echo "Converting the following images:"
 ls *.jpg
 
+echo "---------------------------------------------"
+
 for i in $(ls *.jpg); do
 
     w=$(identify -format "%w" $i)
@@ -11,6 +13,8 @@ for i in $(ls *.jpg); do
 
     cp $i small/
     cp $i medium/
+
+    echo "$i"
 
     if [[ $w > $h ]];then
         mogrify -resize 400 small/"$i"

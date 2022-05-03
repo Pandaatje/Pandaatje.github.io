@@ -21,9 +21,9 @@ for i in $(ls *.jpg); do
     echo "$filename"
 
     if [[ $w > $h ]];then
-        echo "{'file' : '$filename', 'name' : '000 - Title - Location, Country', 'format' : 'L'}," >> new_data.js
+        echo "{'file' : '$filename', 'description' : '000 - Title - Location, Country', 'format' : 'L'}," >> new_data.js
     else
-        echo "{'file' : '$filename', 'name' : '000 - Title - Location, Country', 'format' : 'P'}," >> new_data.js
+        echo "{'file' : '$filename', 'description' : '000 - Title - Location, Country', 'format' : 'P'}," >> new_data.js
     fi
 
 done

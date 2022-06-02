@@ -531,7 +531,19 @@ h2 {
     width: 100%;
     padding: 5px 0px;
   }
+  #fh5co-image-grid .item a .img-wrap img {
+    transform: scale(1.2);
+  }
 }
+
+@media screen and (max-width: 425px) {
+  #fh5co-image-grid .item a .img-wrap img {
+    transform: scale(1.0);
+  }
+}
+
+
+
 
 .grid-item {
   float: left;

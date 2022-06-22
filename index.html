@@ -45,26 +45,26 @@
 
 	<!-- JS additional functions -->
 	<script src="js/functions.js"></script>
-
-	</head>
-	<body>
+	
+</head>
+<body>
 	<header id="landingHeader" class="to-animate fadeInNoScale animated-slowest">
 		<h1 class="to-animate fadeInUp animated-slow"><img src="assets/SonyA7.svg" class="mbr-navbar__brand-img mbr-brand__img" alt="Pandaatje" style="max-height: 234px; animation: fadeInAnimation ease 2s;animation-iteration-count: 1;animation-fill-mode: forwards;"></h1>
 		<div id="PandaatjeSignatureDiv"><h2 class="to-animate fadeInUp animated-slower" id="PandaatjeSignature" style="display: none;">Pandaatje</h2></div>
 		<span id="down">&#8595;</span> 
 	</header>
-
+	
 	<div class="container-fluid" id="fh5co-image-grid"><div class="grid"><div class="grid-sizer" id="add-images-here"></div></div></div>
-
+	
 	<script type="text/javascript">
-
+		
 		var data = [
-
+			
 			//The command Selection / Add Cursors to Line Ends alt + shift + i
-
+			
 			//{'file' : "XXX", 'description' : "XXX, XXX", 'format' : 'L'},
 			//{'file' : "XXX", 'description' : "XXX, XXX", 'format' : 'P'},
-
+			
 			// bos groen
 			{'file' : "051_51249558216_o", 'description' : "051 - Dark Pines - Germany" , 'format' : "L"},
 			{'file' : "200_51289387524_o", 'description' : "200 - Hidden Waters - Austria" , 'format' : "L"},
@@ -82,6 +82,9 @@
 			{'file' : "dsc00174-1_51337762084_o", 'description' : "00 - Never Alone - Antrona Valley, Italy" , 'format' : "L"},
 			{'file' : "190_51396293229_o", 'description' : "190 - Blue Heron - Ooijpolder, The Netherlands" , 'format' : "L"},
 			{'file' : "050_51249558451_o", 'description' : "050 - Grim Marshland - Kennemerduinen, The Netherlands" , 'format' : "L"},
+			{'file' : 'img_0030_20220622_3652', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+			{'file' : 'img_0029_20220622_1641', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+			{'file' : 'img_0039_20220622_8671', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
 			{'file' : "202_51288669281_o", 'description' : "202 - Endless Cascades - Gollinger Wasserfall, Austria" , 'format' : "L"},
 			{'file' : "10_Dag_12_DSC01966_selwyn_selwyn-1", 'description' : "322 - Ancient Footprint - Møre og Romsdal, Norway" , 'format' : "L"},
 			{'file' : "10_Dag_12_DSC01978_coline_coline-1", 'description' : "221 - The Lookout Tower - Linndalsfallet, Norway" , 'format' : "L"},
@@ -89,13 +92,15 @@
 			{'file' : "052_51249558081_o", 'description' : "052 - Enchanted Waters - Germany" , 'format' : "L"},
 			{'file' : "201_51288669486_o", 'description' : "201 - Green Islands - Austria" , 'format' : "L"},
 			{'file' : "10_Dag_13_DSC02056_coline_coline-1", 'description' : "321 - Make Way - Lonfossen, Norway" , 'format' : "P"},
+			{'file' : 'img_0009_20220622_7983', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+			{'file' : 'img_0010_20220622_14906', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
 			{'file' : "20200619__owl4710-1_51394798192_o", 'description' : "00 - High I Fly - Germany" , 'format' : "L"},
 			{'file' : "owl4851-1_51396573090_o", 'description' : "00 - You Are Being Watched - Germany" , 'format' : "L"},
 			{'file' : "120_51337762729_o", 'description' : "120 - Long Night - Alps" , 'format' : "L"},
 			{'file' : "10_Dag_13_DSC02145_selwyn_selwyn-1", 'description' : "220 - Concealed By Leaves - Litlvatnet, Norway" , 'format' : "P"},
 			{'file' : "10_Dag_10_DSC01531_selwyn_selwyn-1", 'description' : "251 - Every Leaf Speaks - Sápmi, Sweden" , 'format' : "L"},
 			{'file' : "10_Dag_25_DSC04684_selwyn_selwyn-1", 'description' : "252 - Every Leaf Speaks - Sápmi, Sweden" , 'format' : "L"},
-		
+			
 			// portra
 			{'file' : "001_51190203912_o", 'description' : "001 - An Alien Landscape - High Alpine Road, Austria" , 'format' : "L"},
 			{'file' : "009_51191127203_o", 'description' : "009 - The Summer Was Long - Großglockner, Austria " , 'format' : "L"},
@@ -128,6 +133,8 @@
 			{'file' : "081_51288688131_o", 'description' : "081 - Sun Rays - Ameland, The Netherlands" , 'format' : "L"},
 			{'file' : "dsc01371-1_51371267027_o", 'description' : "00 - Summer Warmth - Drente, The Netherlands" , 'format' : "L"},
 			{'file' : "dsc01309-1_51373030900_o", 'description' : "00 - May The Day Begin - Drente, The Netherlands" , 'format' : "L"},
+            {'file' : 'img_0026_20220622_29859', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0028_20220622_29496', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
 			{'file' : "dsf8251-3_51248832742_o", 'description' : "00 - A Frozen Dream - Hatertsevennen, The Netherlands" , 'format' : "L"},
 			{'file' : "171_51248835272_o", 'description' : "171 - Sharp Ridges - Dachstein, Austria" , 'format' : "L"},
 			{'file' : "180_51288691271_o", 'description' : "180 - Cold Awakening - Kennemerduinen, The Netherlands" , 'format' : "P"},
@@ -142,7 +149,7 @@
 			
 			{'file' : "031_51249751563_o", 'description' : "031 - Crashing Waves - Kennemerduinen, The Netherlands" , 'format' : "L"},
 			{'file' : "030_51250313184_o", 'description' : "030 - Sea, Sand And Sunset - Ameland, The Netherlands" , 'format' : "L"},
-
+			
 			// zwart wit
 			{'file' : "141_51354889414_o", 'description' : "141 - Morning Mist - Antrona Valley, Italy" , 'format' : "L"},
 			{'file' : "140_51354150626_o", 'description' : "140 - Morning Mist - Antrona Valley, Italy" , 'format' : "L"},
@@ -167,7 +174,7 @@
             {'file' : "IMG_7870-3" , 'description' : "00 - Winter Is Coming - Riale, Italy" , 'format' : "L"},
 			{'file' : "DSCF3388", 'description' : "00 - Floating By - Baceno, Italy" , 'format' : "L"},
 			{'file' : "DSCF3412", 'description' : "00 - Holy Light - Baceno, Italy" , 'format' : "P"},
-
+			
 			// bos groen 2
 			{'file' : "DSCF3132", 'description' : "00 - Late Blossoms - Agrano, Italy" , 'format' : "L"},
 			{'file' : 'img_0270_20220501_12386-3', 'description' : '000 - Overgrown - Inderø Skov, Denmark', 'format' : 'L'},
@@ -175,8 +182,8 @@
 			{'file' : "DSCF3173", 'description' : "00 - Covered In Green - Agrano, Italy" , 'format' : "L"},
 			{'file' : "DSCF3206", 'description' : "00 - Overgrown In Green - Agrano, Italy" , 'format' : "P"},
 			{'file' : "DSCF3265", 'description' : "00 - From The Deep - Baceno, Italy" , 'format' : "L"},
-
-
+			
+			
 			// dieren
 			{'file' : "amf8681_51395559206_o", 'description' : "00 - Peace - The Netherlands" , 'format' : "P"},
 			{'file' : "amf8702_51396293119_o", 'description' : "00 - Get Out - The Netherlands" , 'format' : "L"},
@@ -205,6 +212,8 @@
 			{'file' : "101_51337247888_o", 'description' : "101 - Carving Rocks - Antrona Valley, Italy" , 'format' : "P"},
 			{'file' : "100_51337761829_o", 'description' : "100 - Carving Rocks - Antrona Valley, Italy" , 'format' : "P"},
 			{'file' : "11_Dag_20_DSC03596_coline_selwyn-1", 'description' : "303 - A Touch Of The Ocean - Lofoten, Norway" , 'format' : "L"},
+			{'file' : 'img_0014_20220622_2425', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+			{'file' : 'img_0016_20220622_11492', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
 			{'file' : "11_Dag_20_DSC03642_coline_coline-1", 'description' : "302 - A Touch Of The Ocean - Lofoten, Norway" , 'format' : "L"},
 			{'file' : "11_Dag_20_DSC03559-Pano_selwyn_selwyn-1", 'description' : "301 - An Icey Swim - Lofoten, Norway" , 'format' : "L"},
 			{'file' : "3_Dag_13_DSC02088_selwyn_selwyn-1", 'description' : "00 - Endless Paths - Norway" , 'format' : "P"},
@@ -262,11 +271,42 @@
             {'file' : "IMG_7962" , 'description' : "00 - Aftermath - Bad Bertrich, Germany" , 'format' : "P"},
             {'file' : "IMG_8000" , 'description' : "00 - I Am On - Bad Bertrich, Germany" , 'format' : "P"},
 
-
-
-
-
+			// zw norway 2022 may
+            {'file' : 'img_0000_20220622_21226', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0003_20220622_26622', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0004_20220622_22295', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0005_20220622_24310', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+            {'file' : 'img_0008_20220622_11881', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0012_20220622_24502', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0011_20220622_17017', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+            {'file' : 'img_0013_20220622_6588', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0017_20220622_20241', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0021_20220622_24435', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0020_20220622_6111', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+            {'file' : 'img_0023_20220622_9490', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0025_20220622_6907', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0027_20220622_31691', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0031_20220622_10360', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0035_20220622_18426', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0036_20220622_5989', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+            {'file' : 'img_0037_20220622_30007', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+            {'file' : 'img_0038_20220622_12192', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+			
+			
+			
             // {'file' : 'img_0000_20220609_26528', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            // {'file' : 'img_0001_20220622_4380', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            // {'file' : 'img_0002_20220622_5448', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0006_20220622_26955', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+            {'file' : 'img_0007_20220622_1239', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            // {'file' : 'img_0015_20220622_32518', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0018_20220622_8636', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+            // {'file' : 'img_0019_20220622_14571', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            // {'file' : 'img_0022_20220622_14950', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            // {'file' : 'img_0024_20220622_15190', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+            // {'file' : 'img_0032_20220622_4337', 'description' : '000 - Title - Location, Country', 'format' : 'L'},
+            {'file' : 'img_0033_20220622_24750', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
+            {'file' : 'img_0034_20220622_26205', 'description' : '000 - Title - Location, Country', 'format' : 'P'},
 
 			
 			// new data gets automatically inserted above

@@ -15,9 +15,14 @@ function addImages(obj,data,n,webp) {
     var img_divs = '';
     var extention = '.jpg';
     var dir = 'medium/';
+    
+    if(window.innerWidth>1500){
+        var dir = 'large';
+    }
+    
     if(webp) {
         extention = '.webp';
-        dir = 'medium_webp/';
+        dir = dir + '_webp/';
     }
 
     // loop over data 
